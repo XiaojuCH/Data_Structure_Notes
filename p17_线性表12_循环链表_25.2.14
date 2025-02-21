@@ -13,16 +13,16 @@ List *tail = NULL;
 int main()
 {
     
-    printf("1.³õÊ¼»¯Á´±í\n");
-    printf("2.²åÈë¡á½Úµã\n");
-    printf("3.É¾³ı½Úµã\n");
-    printf("4.·µ»Ø½ÚµãÎ»ÖÃ\n");
-    printf("5.±éÀúÁ´±í\n");
-    printf("0.ÍË³ö\n");
+    printf("1.åˆå§‹åŒ–é“¾è¡¨\n");
+    printf("2.æ’å…¥â™‚èŠ‚ç‚¹\n");
+    printf("3.åˆ é™¤èŠ‚ç‚¹\n");
+    printf("4.è¿”å›èŠ‚ç‚¹ä½ç½®\n");
+    printf("5.éå†é“¾è¡¨\n");
+    printf("0.é€€å‡º\n");
 
     while(1)
     {
-        printf("ÇëÑ¡ÔñÄãµÄ²Ù×÷: ");
+        printf("è¯·é€‰æ‹©ä½ çš„æ“ä½œ: ");
         int choice;
         scanf("%d",&choice);
         fflush(stdin);
@@ -33,13 +33,13 @@ int main()
         {
             case 1:
             {
-                printf("ÊäÈë½ÚµãµÄÖµ,ÊäÈë0Íê³É³õÊ¼»¯\n");
+                printf("è¾“å…¥èŠ‚ç‚¹çš„å€¼,è¾“å…¥0å®Œæˆåˆå§‹åŒ–\n");
                 while(1)
                 {
                     List *new = (List*)malloc(sizeof(List));
                     if(new == NULL)
                     {
-                        printf("ÄÚ´æ·ÖÅäÊ§°Ü!");
+                        printf("å†…å­˜åˆ†é…å¤±è´¥!");
                         return;
                     }
 
@@ -65,7 +65,7 @@ int main()
                     }
                     tail->next = NULL;
                 }
-                printf("³õÊ¼»¯³É¹¦!\n");
+                printf("åˆå§‹åŒ–æˆåŠŸ!\n");
                 break;
             }
 
@@ -73,18 +73,18 @@ int main()
             {
                 if(!head)
                 {
-                    printf("ÇëÏÈ³õÊ¼»¯Á´±í!\n");
+                    printf("è¯·å…ˆåˆå§‹åŒ–é“¾è¡¨!\n");
                     break;
                 }
 
                 List *New = (List*)malloc(sizeof(List)); 
                 int numm;
-                printf("ÇëÊäÈëÄãĞèÒª²å¡áµÄÄÚÈİ:\n");
+                printf("è¯·è¾“å…¥ä½ éœ€è¦æ’â™‚çš„å†…å®¹:\n");
                 scanf("%d",&numm);
 
                 New->num = numm;
 
-                printf("ÇëÎÊÄãÒª²åÈë¡áµ½µÚ¼¸¸öÎ»ÖÃ:\n");
+                printf("è¯·é—®ä½ è¦æ’å…¥â™‚åˆ°ç¬¬å‡ ä¸ªä½ç½®:\n");
                 int location , loc = 1;
                 scanf("%d",&location);
 
@@ -97,13 +97,13 @@ int main()
                         q->next = New;
                     }
                 }
-                printf("²åÈë¡á³É¹¦!\n");
+                printf("æ’å…¥â™‚æˆåŠŸ!\n");
                 break;
             }
 
             case 3:
             {
-                printf("ÇëÊäÈëĞèÒªÉ¾³ıµÄ½ÚµãµÄÎ»ÖÃ:");
+                printf("è¯·è¾“å…¥éœ€è¦åˆ é™¤çš„èŠ‚ç‚¹çš„ä½ç½®:");
                 int loc , location = 1;
                 scanf("%d",&loc);
                 
@@ -116,18 +116,18 @@ int main()
                 }
             
                 if (curr == NULL) {
-                    printf("Î»ÖÃ³¬³öÁ´±í³¤¶È£¬É¾³ıÊ§°Ü£¡\n");
+                    printf("ä½ç½®è¶…å‡ºé“¾è¡¨é•¿åº¦ï¼Œåˆ é™¤å¤±è´¥ï¼\n");
                 } else {
-                    prev->next = curr->next;  // Á¬½ÓÇ°ºó½Úµã
-                    free(curr);  // É¾³ıµ±Ç°½Úµã
-                    printf("É¾³ı³É¹¦!\n");
+                    prev->next = curr->next;  // è¿æ¥å‰åèŠ‚ç‚¹
+                    free(curr);  // åˆ é™¤å½“å‰èŠ‚ç‚¹
+                    printf("åˆ é™¤æˆåŠŸ!\n");
                 }
                 break;
             }
 
             case 4:
             {
-                printf("ÇëÊäÈëÄãÏëÒª·µ»ØÎ»ÖÃµÄÄÚÈİ:");
+                printf("è¯·è¾“å…¥ä½ æƒ³è¦è¿”å›ä½ç½®çš„å†…å®¹:");
                 int n , location = 1;
                 scanf("%d",&n);
 
@@ -135,7 +135,7 @@ int main()
                 {
                     if(q->num == n)
                     {
-                        printf("%d ÔÚµÚ %d ¸öÎ»ÖÃÉÏ\n",n,location);
+                        printf("%d åœ¨ç¬¬ %d ä¸ªä½ç½®ä¸Š\n",n,location);
                         break;
                     }
                     else
@@ -150,10 +150,10 @@ int main()
             {
                 if(!head)
                 {
-                    printf("ÇëÏÈ³õÊ¼»¯Á´±í!\n");
+                    printf("è¯·å…ˆåˆå§‹åŒ–é“¾è¡¨!\n");
                     break;
                 }
-                printf("*****************Á´±íÖĞµÄÔªËØ*****************\n");
+                printf("*****************é“¾è¡¨ä¸­çš„å…ƒç´ *****************\n");
                 for(List *p = head ; p != NULL ; p = p->next)
                 {
 
@@ -165,7 +165,7 @@ int main()
 
             default: 
             {
-                printf("ÇëÊäÈëÕıÈ·µÄÑ¡Ïî!\n");
+                printf("è¯·è¾“å…¥æ­£ç¡®çš„é€‰é¡¹!\n");
                 continue;
             }
         }
