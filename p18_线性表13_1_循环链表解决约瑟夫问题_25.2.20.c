@@ -1,4 +1,4 @@
-/*ÎÊÌâ:ÓÃÑ­»·ÁĞ±íÄ£ÄâÔ¼Éª·òÎÊÌâ,°Ñ41¸öÈË×ÔÉ±µÄË³Ğò±àºÅÊä³ö*/
+/*é—®é¢˜:ç”¨å¾ªç¯åˆ—è¡¨æ¨¡æ‹Ÿçº¦ç‘Ÿå¤«é—®é¢˜,æŠŠ41ä¸ªäººè‡ªæ€çš„é¡ºåºç¼–å·è¾“å‡º*/
 
 #define STEP 2
 
@@ -7,8 +7,8 @@
 
 typedef struct List
 {
-    int num;//Ãû×Ö
-    int isOut;//0±íÊ¾Ã»ÓĞ±»ÌÔÌ­
+    int num;//åå­—
+    int isOut;//0è¡¨ç¤ºæ²¡æœ‰è¢«æ·˜æ±°
     struct List *next;
 }List;
 
@@ -24,7 +24,7 @@ int main()
         List *new = (List*)malloc(sizeof(List));
         if(new == NULL)
         {
-            printf("ÄÚ´æ·ÖÅäÊ§°Ü!");
+            printf("å†…å­˜åˆ†é…å¤±è´¥!");
             return;
         }
         
@@ -47,10 +47,10 @@ int main()
 
     tail->next = head;
 
-    List *current = head;//ÏÖÔÚµÄ½Úµã
-    List *prev = tail;//ÉÏÒ»¸ö½Úµã
+    List *current = head;//ç°åœ¨çš„èŠ‚ç‚¹
+    List *prev = tail;//ä¸Šä¸€ä¸ªèŠ‚ç‚¹
 
-    // Ä£ÄâÔ¼Éª·ò»·
+    // æ¨¡æ‹Ÿçº¦ç‘Ÿå¤«ç¯
     int count = 0;
     while(count < 41)
     {
