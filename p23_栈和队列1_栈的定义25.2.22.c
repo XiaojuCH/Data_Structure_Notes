@@ -1,10 +1,10 @@
 /*
 
-´´½¨Ò»¸öÕ»
+åˆ›å»ºä¸€ä¸ªæ ˆ
 
-ÈëÕ»
+å…¥æ ˆ
 
-³öÕ»
+å‡ºæ ˆ
 
 */
 
@@ -19,16 +19,15 @@ typedef struct
     int *base;
     int *top;
     int stackSize;
-    int data[256];
 }Stack;
 
-//³õÊ¼»¯Õ»
+//åˆå§‹åŒ–æ ˆ
 void initStack(Stack *s);
 
-//ÈëÕ»
+//å…¥æ ˆ
 void push(Stack *s, int a);
 
-//³öÕ»
+//å‡ºæ ˆ
 void pop(Stack *s);
 
 int main()
@@ -53,7 +52,7 @@ void initStack(Stack *s)
     {
         exit(0);
     }
-    s->top = s->base;//×î¿ªÊ¼Õ»¶¥¾ÍÊÇÕ»µ×
+    s->top = s->base;//æœ€å¼€å§‹æ ˆé¡¶å°±æ˜¯æ ˆåº•
     s->stackSize = STACK_INIT_SIZE;
 }
 
@@ -61,12 +60,12 @@ void push(Stack *s, int a)
 {
     if(*(s->top) == STACK_INIT_SIZE - 1)
     {
-        printf("Õ»ÒÑÂú!\n");
+        printf("æ ˆå·²æ»¡!\n");
         return;
     }
     else
     {
-        printf("Ñ¹Èë%d\n",a);
+        printf("åŽ‹å…¥%d\n",a);
         *(s->top) = a;
         s->top++;
     }
@@ -76,12 +75,12 @@ void pop(Stack *s)
 {
     if(s->top == s->base)
     {
-        printf("Õ»ÒÑ¿Õ¿ÕÈçÒ²\n");
+        printf("æ ˆå·²ç©ºç©ºå¦‚ä¹Ÿ\n");
         return;
     }
     else
     {
         s->top--;
-        printf("µ¯³ö%d\n",*(s->top));
+        printf("å¼¹å‡º%d\n",*(s->top));
     }
 }
