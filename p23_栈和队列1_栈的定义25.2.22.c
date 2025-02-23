@@ -58,7 +58,7 @@ void initStack(Stack *s)
 
 void push(Stack *s, int a)
 {
-    if(*(s->top) == STACK_INIT_SIZE - 1)
+    if(s->top - s->base == s->stackSize)
     {
         printf("栈已满!\n");
         return;
