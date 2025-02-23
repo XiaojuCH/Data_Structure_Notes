@@ -63,12 +63,10 @@ void push(Stack *s, int a)
         printf("栈已满!\n");
         return;
     }
-    else
-    {
-        printf("压入%d\n",a);
-        *(s->top) = a;
-        s->top++;
-    }
+
+    s->top++;
+    printf("压入%d\n",a);
+    *(s->top) = a;
 }
 
 void pop(Stack *s)
@@ -78,9 +76,7 @@ void pop(Stack *s)
         printf("栈已空空如也\n");
         return;
     }
-    else
-    {
-        s->top--;
-        printf("弹出%d\n",*(s->top));
-    }
+    
+    printf("弹出%d\n",*(s->top));
+    s->top--;
 }
