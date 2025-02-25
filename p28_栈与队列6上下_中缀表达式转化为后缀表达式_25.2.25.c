@@ -1,8 +1,8 @@
 /*
 
-½«ÖÐ×º±í´ïÊ½×ª»¯Îªºó×º±í´ïÊ½
-ÀýÈç£º
-(1 - 2) * (4 + 5) ×ª»¯Îª 1 2 - 4 5 + *
+å°†ä¸­ç¼€è¡¨è¾¾å¼è½¬åŒ–ä¸ºåŽç¼€è¡¨è¾¾å¼
+ä¾‹å¦‚ï¼š
+(1 - 2) * (4 + 5) è½¬åŒ–ä¸º 1 2 - 4 5 + *
 
 */
 
@@ -32,23 +32,28 @@ int main()
     Stack s;
     initStack(&s);
 
-    printf("ÇëÊäÈë´ý¼ÆËãÊý¾Ý,Êý¾ÝÓëÔËËã·ûÖ®¼äÓÃ¿Õ¸ñ¸ô¿ª,ÒÔ#×÷Îª½áÊø±êÖ¾:\n");
+    printf("è¯·è¾“å…¥å¾…è®¡ç®—æ•°æ®,ä»¥#ä½œä¸ºç»“æŸæ ‡å¿—:\n");
 
     char ch;
     char e;
     scanf("%c",&ch);
     while(ch != '#')
     {
-        if(ch >= '0' && ch <= '9')
+        while(ch >= '0' && ch <= '9')
         {
             printf("%c",ch);
-        }
-        else if(')' == ch)
+            scanf("%c",&ch);
+            if(ch < '0' || ch > '9')
+            {
+                printf(" ");
+            }
+        } 
+        if(')' == ch)
         {
             Pop(&s,&e);
             while('(' != e)
             {
-                printf("%c",e);
+                printf("%c ",e);
                 Pop(&s,&e);
             }
         }
@@ -69,7 +74,7 @@ int main()
                     }
                     else
                     {
-                        printf("%c",e);
+                        printf("%c ",e);
                     }
                 } while (StackLen(s) && '(' != e);
                 Push(&s,ch);
@@ -79,16 +84,25 @@ int main()
         {
             Push(&s,ch);
         }
+        else if('#' == ch)
+        {
+            break;
+        }
         else
         {
-            printf("\n³ö´í!ÊäÈë¸ñÊ½´íÎó\n");
+            printf("\nå‡ºé”™!è¾“å…¥æ ¼å¼é”™è¯¯\n");
             return -1;
         }
 
         scanf("%c",&ch);
     }
+ 
+    while (StackLen(s))
+    {
+        Pop(&s, &e);
+        printf("%c", e);
+    }
     
-
     return 0;
 }
 
@@ -105,7 +119,7 @@ void initStack(Stack *s)
 
 void Push(Stack *s, ElemType e)
 {
-    if(s->top - s->base >= STACK_INIT_SIZE)
+    if(s->top - s->base >= s->stackSize)
     {
         s->base = (ElemType *)realloc(s->base, (s->stackSize + STACKINCRIMENT) * sizeof(ElemType));
         if(!s->base)
