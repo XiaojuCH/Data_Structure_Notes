@@ -1,6 +1,6 @@
 /*
 
-  ÕÛ°ë²éÕÒËã·¨µÄµİ¹éÊµÏÖ
+  æŠ˜åŠæŸ¥æ‰¾ç®—æ³•çš„é€’å½’å®ç°
 
 */
 
@@ -14,15 +14,15 @@ int bin_search( int str[], int low, int high, int key)
     mid = (low + high ) / 2;
     if(str[mid] == key)
     {
-        return mid; //²éÕÒ³É¹¦
+        return mid; //æŸ¥æ‰¾æˆåŠŸ
     }
     if(str[mid] < key)
     {
-        return bin_search(str, mid + 1, high, key);  // ²éÕÒÓÒ°ë²¿·Ö
+        return bin_search(str, mid + 1, high, key);  // æŸ¥æ‰¾å³åŠéƒ¨åˆ†
     }
     if(str[mid] > key)
     {
-        return bin_search(str, low, mid - 1, key);  // ²éÕÒ×ó°ë²¿·Ö
+        return bin_search(str, low, mid - 1, key);  // æŸ¥æ‰¾å·¦åŠéƒ¨åˆ†
     }
 
     return -1;
@@ -33,17 +33,17 @@ int main()
     int str[11] = {1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89};
     int n, addr;
 
-    printf("ÇëÊäÈë´ı²éÕÒµÄ¹Ø¼ü×Ö:\n");
+    printf("è¯·è¾“å…¥å¾…æŸ¥æ‰¾çš„å…³é”®å­—:\n");
     scanf("%d",&n);
 
     addr = bin_search(str, 0, 10, n);
     if( -1 != addr)
     {
-        printf("²éÕÒ³É¹¦,¿ÉÏ²¿ÉºØ,¿É¿Ú¿ÉÀÖ! ¹Ø¼ü×Ö %d ËùÔÚµÄÎ»ÖÃÊÇ: %d\n",n,addr);
+        printf("æŸ¥æ‰¾æˆåŠŸ,å¯å–œå¯è´º,å¯å£å¯ä¹! å…³é”®å­— %d æ‰€åœ¨çš„ä½ç½®æ˜¯: %d\n",n,addr);
     }
     else
     {
-        printf("²éÕÒÊ§°Ü!\n");
+        printf("æŸ¥æ‰¾å¤±è´¥!\n");
     }
 
     return 0;
